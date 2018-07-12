@@ -1,0 +1,73 @@
+INSTALAÇÃO DO PURE-FTPD NO DEBIAN 9 - STRETCH 
+
+# Atualizando os indices de repositórios e atualizando os pacotes 
+
+  apt-get update && apt-get upgrade 
+
+# Instalando o Pure-FTPD 
+
+  ap-get install pure-ftpd pure-ftpd-common 
+  
+# Adicionando um grupo para usuário ftp
+
+  groupadd ftp
+
+# Adicionando usuário local para ser utilizado no Pure-FTPD 
+
+  useradd -g ftp -s /bin/false -c "Usuário FTP" -d /home/ftpuser -m ftpuser 
+
+-g Nome ou ID do grupo no qual o usuário deve ser inserido
+-s Informa o shell para login do novo usuário 
+-c Informações sobre o usuário 
+-d Informa o diretório home do usuário 
+-m Cria o diretório pessoal do usuário 
+
+# Alterando permissões do diretório que será utilizado o Pure-FTPD 
+
+  chown -R ftpuser:ftp /home/ftpuser
+  
+-R Opera em arquivos recursivamente 
+
+# Adicionando usuário e grupo no Pure-FTPD
+
+  pure-pw useradd ftpuser -u uid -g gid -c "Usuário FTP" -d /home/ftpuser 
+
+# Atualizando o pureftpd.pdb 
+
+  pure-pw mkdb 
+  
+# Informações de usuário e senha criados 
+
+Usuário: ftpuser 
+Senha: Senha_criada 
+
+Obs. Essas informações são armazenadas no $DIR/pure-ftpd/conf/purefpd.passwd 
+
+# Após finalizar o processo de instalação e configuração é necessário verificar se os links simbólicos foram criados nos 
+seguintes diretórios /conf/PureDB, /conf/UnixAuthetication, /conf/PAMAuthetication para o diretório /auth
+
+  cd /$DIR/pure-ftpd/auth 
+  ls -ld * 
+  
+  50PureDB -> /$DIR/pureftpd/conf/PureDB
+  65unix -> /$DIR/conf/UnixAuthentication 
+  70pam -> $DIR/conf/PAMAuthentication 
+  
+# Caso os links não sejam criados de forma automática, configure-os com o seguinte comando
+
+  ln -s /$DIR/pure-ftpd/conf/PureDB /auth/50PureDB
+  ln -s /$DIR/pure-ftpd/conf/UnixAuthentication /auth/65unix
+  ln -s /$DIR/pure-ftpd/conf/PAMAuthentication /auth/70pam
+  
+# Reiniciando o serviço do Pure-FTPD 
+
+  /etc/init.d/pure-ftpd restart 
+  
+# Para testar se o servidor está rodando utilziar o seguinte comando: 
+
+  netstat -natp | grep pure-ftpd 
+  
+
+  
+
+
