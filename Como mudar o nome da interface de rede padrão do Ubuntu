@@ -1,0 +1,15 @@
+# Como mudar o nome da interface de rede padrão do Ubuntu
+
+vim /etc/default/grub
+
+# Na linha "GRUB_CMDLINE_LINUX" adicionar o parâmetro "net.ifnames=0 biosdevname=0" ficando assim: 
+
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
+
+# Com o usuário root faço o seguinte comando: 
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Reinicie o sistema 
+
+shutdown -r 
