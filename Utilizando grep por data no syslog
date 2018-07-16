@@ -1,0 +1,6 @@
+# Utilizando grep por data no syslog
+
+
+grep -E `date "+%b %e"` /var/log/firewall.log 
+#grep -E $(date "+%b %e") /var/log/firewall.log 
+
