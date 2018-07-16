@@ -1,0 +1,10 @@
+#TROUBLESHOOT VIRTUAL BOX NO LINUX
+
+#Tipo de Problema
+
+Erro: /sbin/vboxconfig
+
+Solução: Instalar os seguinte pacotes, gcc, make e perl 
+
+
+apt-get install gcc make perl -y
