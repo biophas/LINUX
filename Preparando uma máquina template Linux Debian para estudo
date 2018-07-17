@@ -1,0 +1,43 @@
+# Preparando uma máquina template Linux Debian para estudo 
+
+# Download da debian-9.5.0-amd64-netinst.iso 
+
+https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/
+
+# Configuração do Hardware 
+
+HD: 20GB
+Mem:1024 MB
+CPU: 02
+Network Adapter: Bridge 
+Desativa: Floppy
+
+# Configuração partição 
+
+300 MB /boot
+12Gb / 
+4 GB swap 
+4.7 /var 
+
+# Instalação de programas 
+
+gcc
+g++
+libcurses 
+build-essential
+libgd2-dev
+make 
+vim
+openssh-server
+net-tools 
+
+# Configuração do arquivo vimrc 
+
+Descomentar a linha syntax on (Habilita a syntax)
+Adicionar a linha set number (Permite numreas as linhas de arquivo aberto)
+
+
+
+
+
+
