@@ -1,0 +1,15 @@
+# LPIC-2
+ 
+
+named-checkconf (8)  - named configuration file syntax checking tool
+(Ferramenta de checagem de syntax do arquivo de configuração named.conf)
+
+named-checkzone (8)  - zone file validity checking or converting tool
+(Arquivo de validação de zona ou ferramenta de conversão)
+
+named-compilezone (8) - zone file validity checking or converting tool
+(Converte o arquivo db.zone binário em arquivo .txt)
+
+
+
+
