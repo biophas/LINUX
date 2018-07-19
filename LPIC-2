@@ -1,5 +1,6 @@
 # LPIC-2
  
+BIND9 DOMAIN SERVER 
 
 named-checkconf (8)  - named configuration file syntax checking tool
 (Ferramenta de checagem de syntax do arquivo de configuração named.conf)
