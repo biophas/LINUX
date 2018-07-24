@@ -1,0 +1,80 @@
+
+# Configuração básica do samba, para compartilhamento de arquivos
+
+[global] 
+
+# Nome do protocolo utilizado pelo Windows na configuração do samba
+
+netbios name = bphs-samba
+
+# Nome do grupo ou domínio
+
+workgroup = BPHS
+
+# Define a forma de como o usuário irá utilizar o compartilhamento, com ou sem senha
+
+security = user
+
+# É o nível que é dado ao sistema operacional, o máximo é 255
+
+os level = 50
+
+# Habilita o mapeamento da conta de convidado, é utilizado o usuário nobody e nogroup no Linux 
+
+guest account = nobody 
+
+# Compartilhamento
+
+[dados]
+
+# Comentário
+
+comment = Arquivos de usuários 
+
+# É o diretório onde se encontra os arquivos que serão compartilhados
+
+path  = /arquivos 
+
+# Seta as permissões para a criação de diretório
+directory mask = 0770
+
+# Seta as permissão para a criação de arquivos 
+
+create mask = 0660
+
+# Permite o compartilhamento ficar aberto para acesso de todos 
+
+browseable = yes
+
+
+
+# Usuário que podem acessar o sistema  
+
+write list = @operador
+
+# ready only e writable é a mesma coisa 
+
+#read only = yes
+
+writable = no
+
+# Compartilhamento Planilhas 
+
+[planilhas] 
+
+comment = Planilhas de usuários 
+
+path = /planilhas 
+directory mask = 0770
+create mask = 0666 
+browseable = yes
+write list = @root
+writable = yes 
+
+# Aceita login de usuários convidados, que no caso do Linux é chamado de nobody e nogroup
+
+guest ok = yes
+
+# Veta a cópia de arquivos listados abaixo
+
+veto files = /*.mp3/*.avi/*.rmvb
