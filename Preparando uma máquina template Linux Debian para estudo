@@ -30,7 +30,8 @@ vim
 openssh-server
 net-tools 
 perl
-dnsutils 
+dnsutils
+nmap
 
 # Configuração do arquivo vimrc 
 
@@ -39,7 +40,7 @@ Adicionar a linha set number (Permite numreas as linhas de arquivo aberto)
 
 apt-get update && apt-get upgrade 
 
-apt-get install gcc g++ libcurses build-essential libgd2-dev make vim openssh-server net-tools perl dnsutils -y 
+apt-get install gcc g++ libcurses build-essential libgd2-dev make vim openssh-server net-tools perl dnsutils nmap -y 
 
 
 
