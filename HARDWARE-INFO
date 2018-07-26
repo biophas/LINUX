@@ -1,0 +1,40 @@
+# Comando para listar informações do hardware 
+
+
+dmidecode --help
+Usage: dmidecode [OPTIONS]
+Options are:
+ -d, --dev-mem FILE     Read memory from device FILE (default: /dev/mem)
+ -h, --help             Display this help text and exit
+ -q, --quiet            Less verbose output
+ -s, --string KEYWORD   Only display the value of the given DMI string
+ -t, --type TYPE        Only display the entries of given type
+ -u, --dump             Do not decode the entries
+     --dump-bin FILE    Dump the DMI data to a binary file
+     --from-dump FILE   Read the DMI data from a binary file
+     --no-sysfs         Do not attempt to read DMI data from sysfs files
+ -V, --version          Display the version and exit
+
+
+# Listando o número de série 
+
+ dmidecode -t 1
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 2.6 present.
+
+Handle 0x0001, DMI type 1, 27 bytes
+System Information
+	Manufacturer: POSITIVO
+	Product Name: POS-PIH67CH
+	Version: 0205_POS
+	Serial Number: 1A722CQ5H
+	UUID: 7EFF8720-4BF5-11E2-B13E-4C72B9A9BC80
+	Wake-up Type: Power Switch
+	SKU Number: To be filled by O.E.M.
+	Family: To be filled by O.E.M.
+
+
+
+
+
