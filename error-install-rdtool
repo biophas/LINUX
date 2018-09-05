@@ -1,5 +1,7 @@
 # Error Install rdtool Debian 9 
 
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
 --> Solved bellow 
 
 apt-get remove --auto-remove collectd-core
