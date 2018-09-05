@@ -1,0 +1,9 @@
+# Error Install rdtool Debian 9 
+
+--> Solved bellow 
+
+apt-get remove --auto-remove collectd-core
+apt-get purge --auto-remove collectd-core
+apt-get update
+apt-get --yes install collectd
+
