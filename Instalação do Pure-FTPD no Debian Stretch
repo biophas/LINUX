@@ -6,7 +6,7 @@ INSTALAÇÃO DO PURE-FTPD NO DEBIAN 9 - STRETCH
 
 # Instalando o Pure-FTPD 
 
-  ap-get install pure-ftpd pure-ftpd-common 
+  apt-get install pure-ftpd pure-ftpd-common 
   
 # Adicionando um grupo para usuário ftp
 
