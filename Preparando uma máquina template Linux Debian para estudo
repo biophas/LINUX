@@ -23,7 +23,7 @@ Desativa: Floppy
 
 gcc
 g++
-libcurses 
+libncurses 
 build-essential
 make 
 vim
