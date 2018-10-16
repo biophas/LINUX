@@ -1,0 +1,31 @@
+ZFS (Sun Microsystems)
+
+
+ZFS is a combined file system and logical volume manager designed by
+Sun Microsystems. 
+
+
+The features of ZFS include protection against data corruption, support for high storage capacities, integration of the
+concepts of filesystem and volume management, snapshots and copy-on-write clones, continuous integrity checking and automatic repair, RAID-Z and native NFSv4 ACLs.
+
+ZFS on Linux, which is also known as ZoL, includes fully functional
+and stable SPA, DMU, ZVOL, and ZPL layers.
+
+Não existe pacote oficial disponível para ALL Distributions 
+
+
+Resume 
+
+O ZFS é designado pela Sun Microsystems
+
+Caraterísticas: 
+
+- Proteção contra corrupção de dados
+- Suporte alta capacidade de armazenamento
+- Integração e conceits de filesystem e gerenciameno de volumes
+- Snapshots e copia e escrita de clone
+- Integridade continua, checagem e reparo automaticamente 
+
+Obs: O ZFS também é conhecido como Zol
+
+
