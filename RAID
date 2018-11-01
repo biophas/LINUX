@@ -1,0 +1,10 @@
+# Verificando status de configuração RAID.
+
+
+cat /proc/mdstat
+
+lspci -vv | grep -i raid
+
+
+mdadm -D /dev/mdxx
+
