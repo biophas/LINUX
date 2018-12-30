@@ -1,0 +1,17 @@
+# Linux-Fast-Tips
+
+
+# dosfstools 
+
+mkfs.vfat is used to format a file system using the FAT32 file system
+
+Usually needed to format thumb usb disks. 
+
+In Arch Linux you need to install. 
+
+apt-cache search dosfstools 
+apt-get install dosfstools -y 
+
+--------------------------------------------------------------------------------------------------------------------
+
+
