@@ -1,0 +1,5 @@
+# Listar arquivo por período
+
+
+find / -mtime -5 -ls 
+
