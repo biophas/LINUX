@@ -1,0 +1,50 @@
+
+# Ulimit 
+
+
+https://www.osc.edu/resources/getting_started/howto/howto_use_ulimit_command_to_set_soft_limits
+
+
+This document shows you how to set soft limits using ulimit command.
+
+- The ulimit command sets or reports user process resource limits. 
+- The default limits are defined and applied when a new user is added to the system. 
+- Limits are categorized as either soft or hard. 
+- With the ulimit command, you can change your soft limits for the current shell environment, up to the maximum set by the hard
+limits. 
+- You must have root user authority to change resource hard limits.
+
+
+-a Lists all of the current resource limits
+
+-c Specifies the size of core dumps, in number of 512-byte blocks
+ 
+-d Specifies the size of the data area, in number of K bytes
+
+-f Sets the file size limit in blocks when the Limit parameter is used, or reports the file size limit if no parameter is specified. The -f flag is the default
+
+-H Specifies that the hard limit for the given resource is set. If you have root user authority, you can increase the hard limit. Anyone can decrease it
+
+-m Specifies the size of physical memory, in number of K bytes
+
+-n Specifies the limit on the number of file descriptors a process may have
+
+-s Specifies the stack size, in number of K bytes
+
+-S Specifies that the soft limit for the given resource is set. A soft limit can be increased up to the value of the hard limit. If neither the -H nor -S flags are specified, the limit applies to both
+
+-t Specifies the number of seconds to be used by each process
+
+
+The limit for a specified resource is set when the Limit parameter is specified. The value of the Limit parameter can be 
+a number in the unit specified with each resource, or the value "unlimited". 
+
+For example, to set the file size limit to 51,200 bytes, use:
+
+ulimit -f 100
+
+
+To set the size of core dumps to unlimited, use:
+
+ulimit –c unlimited
+
