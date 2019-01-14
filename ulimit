@@ -31,7 +31,9 @@ limits.
 
 -s Specifies the stack size, in number of K bytes
 
--S Specifies that the soft limit for the given resource is set. A soft limit can be increased up to the value of the hard limit. If neither the -H nor -S flags are specified, the limit applies to both
+-S Specifies that the soft limit for the given resource is set. 
+A soft limit can be increased up to the value of the hard limit. 
+If neither the -H nor -S flags are specified, the limit applies to both
 
 -t Specifies the number of seconds to be used by each process
 
