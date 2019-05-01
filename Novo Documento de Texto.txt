@@ -1,0 +1,17 @@
+Partições
+
+/dev/fd0 - Primeiro dispositivo de disquete OK
+/dev/fd1 - Segundo dispositivo de disquete OK 
+/dev/sda - Primeiro disco na primeira controladora sata ou scsi OK 
+/dev/sda1 - Primeira partição do primeiro disco da primeira controladora sata ou scsi OK
+
+/dev/sdb - Segundo disco na primeira controladora sata ou scsi OK
+/dev/sdb1 - Primeira partição do segundo disco na primeira controladora sata ou scsi OK
+/dev/sr0 - Primeiro dispositivo cdrom sata ou scsi OK
+/dev/sr1 - Segundo dispositivo cdrom sata ou scsi OK
+/dev/hda - Primeiro disco na primeira controladora IDE (Master) OK
+/dev/hda1 - Primeira partição do primeiro disco na primeira controladora IDE OK
+/dev/hdb - Segundo disco na primeira controladora IDE (Slave)
+/dev/hdb1 - Primeira partição do segundo disco na primeira controladora IDE (Slave) 
+/dev/xda - Primeiro disco rígido XT
+/dev/sdb - Segundo disco rígido XT

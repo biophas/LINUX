@@ -1,0 +1,50 @@
+--> COMANDO MOUNT 
+
+O diretório deve estár VAZIO para montagem de um sistema de arquivos.
+
+-t [tipo] 
+
+Tipos do sistema de arquivos usados pelos dispositivos, são aceitos os sistemas de arquivos: 
+
+ext2: Não possui Journaling
+ext3: Possui Journaling, versão melhorada do ext2 
+ext4: Possui journaling e realiza o checksum 
+
+reiserfs: Para partiçoes reiserfs com suporte ao journaling
+xfs: Com suporte ao journaling
+vfat: Partições Windows 95
+msdos: Partições DOS 
+iso9660: Para montar unidades de CDROM
+
+Na maioria das vezes, caso o sistema de arquivos não seja especificado, o mount utilizará a auto-detecção e montará a partição usando o sistema de arquivos correto. 
+
+-r Somente leitura 
+-w Leitura e gravação 
+
+--> O comando mount tem as mesmas informaçãos do arquivo /etc/mtab 
+
+Exemplo de Montagem: 
+
+# Montando uma partição Windows 
+
+	mount -r -t vfat /dev/sda1 /mnt 
+
+# Montando um pen-drive detectado 
+
+	mount -t vfat /dev/sdc1 /mnt
+
+# Montar uma partição DOS
+
+	mount -t msdos /dev/hdb1 /mnt 
+
+# Remontar a partição raiz como somente leitura 
+
+	mount -o remount,ro / 
+
+# Remontar a partição raiz como read/write (a opção -n é usada porque o mount não conseguirá atualizar o arquivo /etc/mtab devido ao sistema de arquivos / estar montado como somente leitura. 
+
+	mount -n -o remount,rw / 
+
+-n --no-mtab
+
+Tips: The command mount -a mount all filesystems mentioned in fstab

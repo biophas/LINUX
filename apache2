@@ -10,7 +10,7 @@ Red hat: httpd
 # File Modules 
 mpm.conf
 
-# MOdule Install 
+# Module Install 
 
 Package centOS: php
 Package Debian: php5
