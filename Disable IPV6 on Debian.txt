@@ -1,0 +1,38 @@
+# Edit file /etc/sysctl.conf 
+
+	sudo nano /etc/sysctl.conf
+
+
+# Place the following entry to disable IPv6 for all adapters.
+
+
+	net.ipv6.conf.all.disable_ipv6 = 1
+
+# For a particular adapter (If the network card name is enp0s3).
+
+	net.ipv6.conf.ens4.disable_ipv6 = 1
+
+
+# To reflect the changes execute the following command.
+
+	sudo sysctl -p
+
+# Create a file called 70-disable-ipv6.conf in the /etc/sysctl.d directory.
+
+sudo nano /etc/sysctl.d/70-disable-ipv6.conf
+
+# Add the following entry to disable IPv6 for all adapters.
+
+net.ipv6.conf.all.disable_ipv6 = 1
+
+
+# For a particular adapter (If the network card name is enp0s3).
+
+net.ipv6.conf.ens4.disable_ipv6 = 1
+
+# Run the below command to take an effect of changes.
+
+
+sudo sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
+
+
