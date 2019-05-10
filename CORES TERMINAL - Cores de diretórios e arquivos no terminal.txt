@@ -1,0 +1,2 @@
+1. Editar o arquivo /etc/profile e adicionar a linha alias ls="ls --color=auto", para que as mudanças tenham efeitos é necessário fazer logout e login novamente. 
+
