@@ -5,9 +5,11 @@ echo 'deb http://deb.debian.org/debian/ stretch-updates main' >> /etc/apt/source
 
 apt-get update 
 
-apt-get install gnome-core gnome-desktop-environment gnome gnome-shell gnome-tweak-tool gdm3 -y
+apt-get install gnome-core gnome gnome-shell gnome-tweak-tool gdm3 -y
 
 shutdown -r 
 
 
+
+Obs. gnome-desktop-environment, pacote não foi encontrado. 
 
