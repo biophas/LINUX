@@ -1,0 +1,41 @@
+RESIZE HD VIRTUALBOX 
+
+# CLONANDO O HD PELO VIRTUALBOX 
+
+
+--> PATH da instalação do Virtualbox
+
+C:\Program Files\Oracle\VirtualBox\VBoxManage.exe 
+
+--> PATH onde se encontra o disco a ser clonado. 
+
+D:\Virtual Machines\CentOS-BPHS
+
+--> Comando 
+
+	VBoxManage.exe clonehd "D:\Virtual Machines\CentOS-BPHS\CentOS-BPHS.vdi" "D:\Virtual Machines\CentOS-BPHS\CentOS-BPHS-2.vdi" --format VDI
+
+Obs. É necessário converter para a extensão vdi, pois a extensão vmdk não aceita o resize de disco. 
+
+# REALIZANDO RESIZE DO DISCO CLONADO
+
+
+--> Comando 
+
+	vboxmanage.exe modifyhd "D:\Virtual Machines\CentOS-BPHS\CentOS-BPHS-2.vdi" resize 40000000
+
+--> Finalizando a configuração
+
+- Após o término do resize, você pode ir no virtualbox e fazer o apontamento para o novo disco. 
+- Inicie a máquina e faça o resize no gerenciador de discos do Windows para aumentar o tamanho lógico do disco. 
+
+
+17/06/2019
+Fábio Costa
+
+
+
+
+
+
+
