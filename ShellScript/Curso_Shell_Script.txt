@@ -1,0 +1,116 @@
+File Globbing x REGEX 
+
+File Globbing - É uma forma que o bash tem para selecionar arquivos e diretórios na interface (ls,cp, mv etc..)
+
+# Uso do * 
+
+	ls -l Aula*	# Lista todos os arquivos com o nome Aula e qualquer caracter que venha DEPOIS
+
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula1
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula10
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula11
+
+
+	ls -l *11	# Lista todos os arquivos e diretório que termine com 11
+
+# Uso do ? 	
+	
+	ls -l Aula?	# Lista todos arquivos e diretórios que tenha somente UM caracter após a letra a
+
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula1
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula2
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula3
+	
+
+	ls -l Aula??	# Lista todos arquivos e diretórios que tenha DOIS caracter após a letra a
+
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula10
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula11
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula12
+
+# Uso da colchetes LISTA 
+    
+	ls -l Aula[123]	# Lista todos os arquivos e diretórios que TERMINAM em 1,2 e 3 
+
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula1
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula2
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula3
+
+
+    	ls -l Aula[1-5] # Lista todos os arquivos e diretórios que terminam do 1 ao 5 
+
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula1
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula2
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula3
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula4
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula5
+
+
+	
+
+# Uso das chaves STRINGS 
+
+	ls -l {Aula,AULA}11	# Lista os arquivos que tenha o mesmo valor na string passada dentro das chaves 
+
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula11
+	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 AULA11
+
+
+
+
+
+REGEX - Função de selecionar um padrão de texto (grep, egrep e fgrep)
+
+egrep - Expressões regulares extendidas  (Deixa o comando mais pesado)
+grep  - Expressões regulares simples
+fgrep - Não usa expressões 
+
+
+# Usando egrep com REGEX 
+
+	egrep "[Ll]inux" texto.txt 
+	egrep "b[aei]g"	 texto.txt 
+	egrep "^Linux"	 texto. txt
+	egrep "^#" texto.txt 
+	egrep -v "^#" texto.txt		# Ele não mostra as linhas que começem com o #
+
+	egrep "Linux$" text.txt		# Sempre que a palavra for no final da linha ele vai mostrar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

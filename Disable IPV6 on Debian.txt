@@ -14,6 +14,9 @@
 
 
 # To reflect the changes execute the following command.
+	sudo sysctl -w net.ipv6.conf.ens4.disable_ipv6 = 1
+
+# Para gravar as informações utiliza o comando abaixo:
 
 	sudo sysctl -p
 

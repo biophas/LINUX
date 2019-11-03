@@ -1,0 +1,14 @@
+--> Configurando rota default no Debian
+
+
+# Adicionando uma rota 
+
+	route add default gw 10.10.0.1 
+
+
+# Deletando uma rota 
+
+	route del default 
+
+
+	

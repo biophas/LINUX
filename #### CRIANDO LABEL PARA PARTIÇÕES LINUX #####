@@ -1,0 +1,15 @@
+#### CRIANDO LABEL PARA PARTIÇÕES LINUX #####
+
+
+# O comando tune2fs Ajusta de forma sintonizada parametros em filesystems ext2, ext3 e ext4 
+
+
+root@DebLAB:~# blkid
+/dev/sda1: UUID="980fb00d-b658-4a6a-b9f4-6682e784b26d" TYPE="ext4" PARTUUID="de18bb5c-01"
+
+tune2fs -L BOOT /dev/sda1 
+
+/dev/sda1: UUID="980fb00d-b658-4a6a-b9f4-6682e784b26d" TYPE="ext4" PARTUUID="de18bb5c-01"
+
+/dev/sda1: LABEL="BOOT" UUID="980fb00d-b658-4a6a-b9f4-6682e784b26d" TYPE="ext4"                                                  RTUUID="de18bb5c-01"
+

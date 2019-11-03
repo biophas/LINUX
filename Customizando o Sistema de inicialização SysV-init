@@ -1,0 +1,47 @@
+Customizando o Sistema de inicialização SysV-init e Systemd 
+
+
+
+
+# Desabilitando um serviço no SysV-init 
+
+	update-rc.d cron disable 2 
+
+# Habilitando um serviço no SysV-init 
+
+	update-rc.d cron enable 2 
+
+# Padrão Red Hat 
+
+# Desabilitando 
+
+	chkconfig --level 2 off
+
+# Habilitando 
+
+	chkconfig --level 2 on 
+
+--> Identificando o runlevel ou target padrão utilizado em seu sistema 
+
+# Systemd 
+
+	ls -l /lib/systemd/system/default.target 
+
+	ou 
+
+	systemctl get.default 
+
+# SysV-init 
+
+	grep default /etc/inittab 
+
+# Para saber se seu init funciona via SysV ou Systemd 
+
+	grep Name /proc/1/status 
+
+
+
+
+
+
+

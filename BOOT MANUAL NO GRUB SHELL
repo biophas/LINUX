@@ -1,0 +1,39 @@
+BOOT MANUAL NO GRUB SHELL 
+
+--L Configuração necessária para um boot manual
+
+# Entrando no grub shell  
+
+--> Pressione c para entrar no Grub Shell 
+
+	c
+
+# Identificando as partições 
+
+	ls
+
+# Listando as informações de uma partição (ex. label, filesystem etc)
+
+	ls (hd0,msdos1)
+
+# Listando o conteúdo da partição 
+
+	ls (hd0,msdos1)/ 
+
+--L Realizando boot manual 
+
+# Entrando na partição de boot 
+
+	set root=(hd0,msdos1) 
+
+# Informando onde deve carregado a imagem do kernel, e onde vai ser montando a partição raiz. 
+
+	linux /vmlinuz-4.9.0-9-amd64 root=/dev/sda2 
+
+# Informando onde o arquivo de imagem initrd 
+
+	initrd /initrd.img-4.9.0-9-amd64
+
+# Realizando o boot 
+
+	boot 
