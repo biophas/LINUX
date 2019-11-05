@@ -68,13 +68,32 @@ fgrep - Não usa expressões
 
 # Usando egrep com REGEX 
 
-	egrep "[Ll]inux" texto.txt 
-	egrep "b[aei]g"	 texto.txt 
-	egrep "^Linux"	 texto. txt
-	egrep "^#" texto.txt 
-	egrep -v "^#" texto.txt		# Ele não mostra as linhas que começem com o #
+	egrep "[Ll]inux" texto.txt					# Imprime todas as palavras com o nome Linux iniciando com L maiúsculo ou l minúsculo 
+	
+	egrep "b[aei]g"	 texto.txt 					# Imprime todas as palavras qe começam com b e que tenham as ocorrências a,e,i na palavra e 
+	que terminem com g
 
-	egrep "Linux$" text.txt		# Sempre que a palavra for no final da linha ele vai mostrar
+	egrep "^Linux"	 texto.txt    				# Imprime todas as ocorrências que começem como a palavra Linux
+	egrep "^#" texto.txt 						# Imprime todas as ocorrências que começem a linha com # 
+	egrep -v "^#" texto.txt						# Ele não mostra as ocorrências que começem com o #
+
+	egrep "Linux$" texto.txt				    # Sempre que a ocorrência for no final da linha será mostrada 
+
+	egrep "^$" texto.txt						# Será mostrado todas as ocorrências de linhas vazias 
+	egrep -v "^$" texto.texto					# Não será mostrado as ocorrências de linhas que estão vazias
+
+--> Caracters especiais 
+
+
+		egrep "b[a-i]g*" texto.txt 		# A palavra começa com a letra b, podenddo ser ba,be ou bi, terminando com a letra g, sendo que pode até mesmo não existir e que também possa ter uma ou mais ocorrências da letra g
+
+		egrep "b[a-i]g+" texto.txt 		# A palavra começa com b e que pode ser ba, be ou bi termine com a letra g e que deve existir pelo menos uma ou mais ocorrências da letra g
+			egrep "b[a-i]g?" text.txt 		# A palavra começa com b e que pode ser ba,be ou bi, e que termine com a letra g e que pode até não existir, mas que apareça somente uma vez. 
+
+			egrep "O.Linux"	text.txt 		# Imprime a linhas que tenha um caracter entre a letra O e o nome Linux
+			
+
+
 
 
 
