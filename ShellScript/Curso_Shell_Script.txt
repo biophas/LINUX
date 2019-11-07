@@ -85,14 +85,31 @@ fgrep - Não usa expressões
 --> Caracters especiais 
 
 
-		egrep "b[a-i]g*" texto.txt 		# A palavra começa com a letra b, podenddo ser ba,be ou bi, terminando com a letra g, sendo que pode até mesmo não existir e que também possa ter uma ou mais ocorrências da letra g
+	egrep "b[a-i]g*" texto.txt 		# A palavra começa com a letra b, podenddo ser ba,be ou bi, terminando com a letra g, sendo que 										pode até mesmo não existir e que também possa ter uma ou mais ocorrências da letra g
 
-		egrep "b[a-i]g+" texto.txt 		# A palavra começa com b e que pode ser ba, be ou bi termine com a letra g e que deve existir pelo menos uma ou mais ocorrências da letra g
-			egrep "b[a-i]g?" text.txt 		# A palavra começa com b e que pode ser ba,be ou bi, e que termine com a letra g e que pode até não existir, mas que apareça somente uma vez. 
+	egrep "b[a-i]g+" texto.txt 		# A palavra começa com b e que pode ser ba, be ou bi termine com a letra g e que deve existir pelo 										menos uma ou mais ocorrências da letra g
+	egrep "b[a-i]g?" text.txt 		# A palavra começa com b e que pode ser ba,be ou bi, e que termine com a letra g e que pode até 										não existir, mas que apareça somente uma vez. 
 
-			egrep "O.Linux"	text.txt 		# Imprime a linhas que tenha um caracter entre a letra O e o nome Linux
-			
+	egrep "O.Linux"	text.txt 		# Imprime a linhas que tenha um caracter entre a letra O e o nome Linux
+	
+	egrep "O.*Linnux" texto.txt 	# O caracter anterior pode não existir, mas que também posso ter varias ocorrências
 
+	egrep "[Ll]inux." texto.txt
+	egrep "[Ll]inux\." texto.txt 
+
+
+	sed '/^#/d' text.txt
+	sed 's/^[Ll]inux/Unix/g' texto.txt
+	  	
+
+
+--> Resumo 
+
+	* Pode aparecer NENHUMA ou varias vezes 
+	+ Pode aparecer UMA ou varias vezes 
+	? Pode aparecer NENHUMA ou apenas UMA VEZ
+	. Ele substitui um caracter 
+	.*
 
 
 
