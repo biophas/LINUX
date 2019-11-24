@@ -37,7 +37,7 @@ File Globbing - É uma forma que o bash tem para selecionar arquivos e diretórios
 	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula3
 
 
-    	ls -l Aula[1-5] # Lista todos os arquivos e diretórios que terminam do 1 ao 5 
+    ls -l Aula[1-5] # Lista todos os arquivos e diretórios que terminam do 1 ao 5 
 
 	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula1
 	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula2
@@ -54,8 +54,6 @@ File Globbing - É uma forma que o bash tem para selecionar arquivos e diretórios
 
 	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 Aula11
 	-rw-r--r-- 1 ubuntu ubuntu 0 Sep  1  2017 AULA11
-
-
 
 
 

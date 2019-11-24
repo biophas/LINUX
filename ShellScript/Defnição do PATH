@@ -1,0 +1,48 @@
+# Defnição do PATH
+
+
+	echo $PATH 
+
+	/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+# Configurando o script para execução de qualquer diretório 
+
+	PATH="$PATH:/opt/CursoShellScript/Scripts2"
+
+Obs. Desta forma é possível executar um script de qualquer diretório 
+
+# Retirando um caminho da variável PATH 
+
+	export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+Obs. No entanto desta forma se a sessão for encerrada a variável PATH, volta a configuração anterior.
+
+# Configurando a variável $PATH de forma definitiva 
+
+	vim ~/.profile 
+
+	PATH="$PATH:~root/opt/CursoShellScript/Scripts2"
+
+--> Resultado da pesquisa sobre arquivos profile no Linux 
+ 
+# Quando é carregado através de um shell que requer login "nome e senha", o bash procura esses arquivos em sequência e executa os comandos contidos, caso existam: 
+
+/etc/profile
+
+~/.bash_profile
+
+~/.bash_login
+
+~/.profile
+
+# O ~/.bashrc é executado caso o bash carregado através de um shell, não requeira login "nome e senha". 
+
+Fonte
+
+https://pt.wikibooks.org/wiki/Guia_do_Linux/Iniciante%2BIntermedi%C3%A1rio/Personaliza%C3%A7%C3%A3o_do_sistema/Arquivo_/etc/profile
+
+
+
+
+
+

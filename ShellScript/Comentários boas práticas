@@ -1,0 +1,26 @@
+# Comentários boas práticas 
+
+
+1 - Criar o cabeçalho (Função, Quem criou, alterações, atualizações etc)
+
+
+##################################################################
+#
+# PrimeiroScript.sh - Script de exemplo do curso 
+# Autor: Fábio Costa (biophas@gmail.com)
+# Data de criação: DD/MM/YYYY
+# Descrição: Script de exemplo que lê a data e hora atual e exibe a lista de alunos 
+# Exemplo de uso: ./PrimeiroScript.sh 
+# Alterações
+#	Dia X - Inclusão da função da ordenação 
+#	Dia Y - Correção da função de leitura 
+#
+##################################################################
+
+# Função de leitura da data e hora
+
+
+# Área de leitura da lista de alunos 
+
+
+

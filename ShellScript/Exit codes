@@ -1,0 +1,13 @@
+Exit codes 
+
+0 é sucesso 
+Qualquer coisa maior que zero representa um tipo de erro 
+
+$? - O código de retorno do comando anterior 
+
+touch teste 
+echo $? 
+0 
+
+# Verificando código de erro dos comandos é pelo man  
+
