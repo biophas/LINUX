@@ -1,0 +1,48 @@
+# Programação Shell Script - Automatizando Rotinas no Linux
+
+
+
+	read NOME 
+	read VAR1 VAR2 VAR3 
+	Curso Shell Script
+	read VAR1 VAR2 
+	VAR1=Curso VAR2=Shell Script 
+
+	read -p "Informe o seu curso: " CURSO # O -p ele mostra o que foi digitado no próximo prompt, ou seja imprime o que foi digitado na linha abaixo. 
+
+
+	read -s CODIGO 	# Não ecoa uma entrada vinda de um terminal 
+
+
+
+#!/bin/bash 
+
+# Script Busca Aluno 
+
+ARQALUNOS="/opt/CursoShellScript/arquivos/alunos2.txt" # Varíável
+ALUNOCOMPLETO=$(grep "$ALUNO" $ARQALUNOS) # Variável
+clear  
+
+echo "===== Script de Busca de Alunos =====" # Ecoando 
+echo "" # Espaço 
+read -p "Por favor, informe o nome do aluno: " ALUNO
+
+echo "" # Espaço
+echo "O nome completo do aluno é: $ALUNOCOMPLETO" # Ecoando a variável $ALUNOCOMPLETO
+echo "" # Espaço
+echo "Fim do Script" # FIM 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

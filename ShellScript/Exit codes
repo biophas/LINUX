@@ -1,7 +1,7 @@
 Exit codes 
 
 0 é sucesso 
-Qualquer coisa maior que zero representa um tipo de erro 
+Qualquer valor maior que zero representa um tipo de erro 
 
 $? - O código de retorno do comando anterior 
 
@@ -9,5 +9,16 @@ touch teste
 echo $? 
 0 
 
-# Verificando código de erro dos comandos é pelo man  
+# Verificando código de erro dos comandos é pelo man ls 
+
+
+ Exit status:
+       0      if OK,
+
+       1      if minor problems (e.g., cannot access subdirectory),
+
+       2      if serious trouble (e.g., cannot access command-line argument).
+
+Obs. o Código de retorno pode ser personalizado pelo o programador
+
 
