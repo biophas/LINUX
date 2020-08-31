@@ -1,0 +1,670 @@
+
+REVISÃO SHELL E COMANDOS NO LINUX 
+
+
+# O QUE É UM SHELL SCRIPT 
+# Funções
+# SELL
+# Tipos de Shell 
+# Verificando o bash atual 
+# PRINCIPAIS COMANDOS LINUX PARTE 1 
+# PS
+# Touch
+# Echo
+# MKDIR
+# RM
+# SLEEP
+# CAT
+# TAC
+# TAIL
+# HEAD
+# WC
+# REDIRECIONAMENTO
+# SORT
+# UNIQ
+# TR
+# CUT
+# DIFF
+# GREP
+# SED
+# MORE
+# LESS
+# FIND
+# DATE
+# SEQ
+# EXPR
+# EXECUÇÃO SEQUENCIAL DE COMANDOS 
+# Redirecionamento de entrada e saída 
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+# O QUE É UM SHELL SCRIPT 
+
+--> Uma sequência lógica de comandos e instruções no Shell (Comandos, variáveis, instruções lógicas e condicionais)
+
+--------------------------------------------------------------------------------------------------------------------
+
+# Funções 
+
+- Automatizar e agilizar atividades 
+- Ferramentas de apoio ao Administrador ou Analista
+
+--------------------------------------------------------------------------------------------------------------------
+
+# IMPORTÂNCIA 
+
+- Aumento de produtividade 
+- Criador de soluções 
+- Reconhecimento 
+- Legado 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# SELL 
+
+--> Interface entre o usuário e o sistema Unix/Linux, interpretador de instruções 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# Tipos de Shell 
+
+- Bourne Shell (sh) Shell orginal e padrão Unix 
+- Bourne-Again (bash) Shell padrão no Linux com melhorias em relação sh
+- Korn Shell (ksh) É uma melhoria do bourne shell
+- C Shell (csh) Recursos de linguagem C
+
+Bourn Shell (sh) > Bourn Again Shell (bash) > korn shell (ksh)
+C shell (csh)
+
+--------------------------------------------------------------------------------------------------------------------
+
+# Verificando o bash atual 
+
+echo $0 
+echo $SHELL
+cat /etc/passwd # Observar o final de cada linha da saída 
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+# PRINCIPAIS COMANDOS LINUX PARTE 1 
+
+	cd ou cd ~ # Vai direto para o diretório home do usuário atual 
+	cd ~biophas # Vai para o diretório home do usuário mencionado 
+
+	ls -ltr # Ordena pelo horário de modificação de forma recursiva 
+
+
+	ls -1 # Lista uma relação de diretórios e arquivos dentro de um diretório 
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+# PS
+
+	aux 
+	All 
+	User 
+	Execution 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# Touch 
+
+--> Ao usuar o touch no arquivo já existente, ele atualiza o horário 
+
+
+# Echo 
+
+echo -n # Não quebra a linha
+
+	echo -n "Linux Shell Script"
+
+echo -e Curso\tShell\nScript # Habilita funções específicas como tabulação \t
+
+	echo -e "Curso Shell\t Script"
+	echo -e "Curso Shell\n Script"
+	echo -e "Col1\tcol2\tcol3"
+
+--------------------------------------------------------------------------------------------------------------------
+
+# MKDIR 
+
+	mkdir -p /dir1/dir2 # Neste caso o -p é para criar o primeiro diretório caso ele não exista. 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# RM 
+
+	rm file1	# Remove só arquivo por padrão 
+	rm -r dir1 	# Remove de forma recursiva o diretório ou arquivo
+	rmdir dir2 	# Remove diretório vazio 
+	rm -f 		# Remove de forma forçada 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# SLEEP 
+
+	spleep		# Aguarda um determinado tempo para exibir ou proseguir um comando. 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# CAT 
+
+	cat arquivo.txt 	# Por padrão imprime a saída padrão 
+	cat -b arquivo.txt	# Numera as linhas, menos as que estão em branco
+	cat -n arquivo.txt	# Numera as linhas mesmo estando em branco 
+	cat -A arquivo.txt 	# Mostra caracter especiais 
+
+OBS: Quando retorno o caracter ^I^I no cat -A significa que é um tab, quando não retonar nada é espaço. 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# TAC Traz informação de forma inversa ao cat
+
+--------------------------------------------------------------------------------------------------------------------
+# TAIL 
+
+	tail arquivolongo.txt		# Mostra as últimas 10 linhas por padrão 
+	tail -n3 arquivolongo.txt 	# Mostra as últimas 3 linhas do arquivo
+
+--------------------------------------------------------------------------------------------------------------------
+
+# HEAD 
+
+	head arquivolongo.txt		# Mostra as 10 primeiras linhas por padrão
+	head -n5 arquivolongo.txt 	# Mostra as 5 primeiras linhas 
+	head -c10 aluno.txt		# Mostra a quantidade de caracters 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# WC
+
+	wc aluno.txt			# Traz a quantidade de linhas, palavras e caracters 
+
+	wc -l				# Quantidade de linha
+	wc -w				# Quantidade de palavras 
+	wc -m				# Quantidade de caracter
+	wc -c				# Quantidade de bytes 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# REDIRECIONAMENTO
+
+	tail -n5 aluno2.txt | wc -w 	# Conta a quantidade de palavras no arquivo aluno2.txt 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# SORT
+
+	sort alunos2.txt		# Ordena a saída 
+	sort -r alunox2.txt		# Ordena da forma inversa
+	sort -k2 alunos2.txt		# Ordena pelo campo/coluna
+	tail /etc/passwd | sort -k3 -t":" # Ordena pela terceira coluna com o delimitador : reconhecendo como string 
+	tail /etc/passwd | sort -k3 -t":" -g # Ordena pela terceira coluna com o delimitador : e por ordem númerica 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# UNIQ 
+
+	uniq alunos.txt		# Não mostra entradas repetidas, porém as ocorrências devem está na sequência. 
+
+	sort alunox.txt | uniq		# Ordena primeiro e com o uniq imprime as entradas sem repetir linhas duplicadas 
+
+	sort alunox.txt | uniq -u	# Mostra ocorrências que não estão duplicadas
+
+	sort alunox.txt | uniq -d	# Mostra as ocorrências duplicadas 
+	sort alunox.txt | uniq -c 	# Conta as repetições 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# TR 
+
+	cat alunos.txt | tr a-z A-Z	# Transforma letra as letras minúscula em maisúcula 
+	cat alunos2.txt | tr "" "\t"	# Troca o espaço pela tabulação 
+	cat alunos2.txt | tr -d aei	# Deleta as ocorências listadas
+	echo alunos.txt | tr [:lower:] [:upper:]
+
+--------------------------------------------------------------------------------------------------------------------
+
+# CUT 
+
+	cat alunos2.txt | cut -c1-3 # Mostra os 3 caracters de cada linha 
+	cat alunos2.txt | cut -c1,2,3	# Mostra os caracter 1,2,3 
+	cat alunos2.txt | cut -c5-	# Mostra do caracter 5 em diante
+
+--------------------------------------------------------------------------------------------------------------------
+
+# DIFF 
+
+	diff aluno.txt alunos3.txt		# Compara os dois arquivos 
+	diff aluno.txt alunos3.txt | cat -A	# Compara os dois arquivos mostrando caracters especiais 
+	diff -w aluno.txt aluno3.txt 		# Compara os arquivos sem considerar espaços, somente ocorrências 
+	diff -r dir1 dir2			# Compara arquivos em diretórios 
+
+Retorno 
+
+3c3$ (Linha 3 dos dois arquivos)
+< Ricardo$ (Arquivo da esquerda tem ricado)
+---$
+> Ricardo Prudenciato$ (O arquivo da direita tem ricardo prudenciato)
+
+--------------------------------------------------------------------------------------------------------------------
+
+# GREP 
+
+	grep -c Ana alunos2.txt			# Conta a quantidade de ocorrências 
+	grep -v Ana alunos2.txt			# Exclui as ocorrências encontrada na saida padrão 
+	grep -r Ana * 				# Realiza uma busca recursiva nos diretórios 
+	grep -A3 Carlos alunos2.txt		# Mostra as ocorrências após o parâmetro passado 
+
+Obs. After (A) e Before (B)
+
+grep - Expressões regulares simples
+egrep - Expressões regulares estendidas 
+fgrep - Não usa expressões regulares, somente string 
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+# SED 
+
+# Deleta da linha 01 a linha 03
+
+	sed '1,3 d' alunos2.txt			 
+
+# Deletando o nome Rafael da saída padrão 
+
+	sed '/Rafael/d' alunos2.txt		
+
+# Substitui a primeira ocorrência do nome Paulo para João.
+	
+	cat alunos2.txt | sed 's/Paulo/João/'	
+
+Obs. Para que as mudanças sejam feitas em todas as ocorrências encontradas, é necessário passar a flag g (Global)
+
+# Substitui todas as ocorrências Linux para Unix por causa da flag g 
+
+
+	echo "Curso Linux Shell Script Linux" | sed 's/Linux/Unix/g'	
+
+# Substitui todos os espaços encotrados
+
+	echo "Curso Linux" | sed 's/ //g'	 
+
+# Substituindo linhas que iniciam com uma palavra por outra passado no parâmetro 
+
+	sed 's/^Linux/Unix/g' sed.txt 
+	cat sed.txt | sed 's/^Linux/Unix/g' 
+
+# Substituindo linhas que terminam com uma palavra por outra passado no parâmetro  
+
+	sed 's/Linux$/Unix/g' sed.txt 
+
+--------------------------------------------------------------------------------------------------------------------
+
+# MORE
+
+--> Espaço pagina o documento, enter passa linha por linha 
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+# LESS
+	
+	Pesquisa de cima para baixo /<item>
+	Para pesquisa de baixo para cima ?<item>
+	n avança para a próxima ocorrência 
+	N retorna para ocorrência anterior 
+	Pode ser usado os direcionais do teclado 
+	p retorna para página anterior 
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+# FIND 
+
+# Busca em todos os diretórios partindo do diretório raiz 
+
+	find / -name arquivo			
+
+# Busco no diretório atual
+
+	find ./ -name arquivo		
+
+# Busca tudo que tem o nome arquivo
+
+	find ./ -name *arquivo*			
+
+# Busca pelo usuário ricardo e tudo que tiver o nome alunos2.txt 
+
+	find / -user ricardo -name alunos2.txt  
+
+# Realizando um find e realizano o ls -l nos arquivos 
+
+	find / -name alunos* -exec ls -l {} \; 
+
+# Realizando um find e mostrando o tipo de arquivo com o comando file 
+
+	find ./ -type f -exec file {} \; 
+
+# Procurar todos os arquivos a partir do diretório atual e alterar a permissão para 644
+
+	find ./ -type f -exec chmod 644 {} \; 
+
+# Procurar todos os arquivos a partir do diretório especificado e gerar o hash SHA1
+
+	find /etc -type f -exec sha1sum {} \; > hashes.txt 
+
+# Procurar os arquivos especificados pelo nome nos subdiretórios do diretório atual e remove-los 
+
+	find */ -type f -iname arquivo.ext -exec rm {} \;
+
+# Procurar todos os diretórios a partir do diretório atual que perteçam ao root e alterar o proprietário 
+
+
+	find . -user root -type d -exec chown fulano '{}'\;
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+# DATE 
+
+	date +%H
+	date +%M
+	date +%d
+	date +%d/%m 
+	 
+ 
+# SEQ 
+
+	seq 10					# Imprime uma contagem até 10
+	seq 2 10 				# Imprime uma contagem do 2 ao 10
+	seq 5 2 30				# Imprime uma contagem do 5 e pula de 2 em 2 até o 30 
+
+
+# EXPR 
+
+
+
+	expr 5 + 2 				# Soma os valores 
+	expr 5 - 2				# Diminui os valores 
+	expr 5 / 2				# Divide mas não exibe decimal, apenas o número interior 
+	expr 5 \* 2				# Multiplica, é necessário proteger o * 
+	echo 3 + 2 | bc 			# Soma os valores 
+	echo "(3+2)*5" | bc 			# Com o bc os valores mais os sinais podem ficar juntos, é necessário proteger com o aspas ""
+
+
+	 
+# EXECUÇÃO SEQUENCIAL DE COMANDOS 
+
+	;	# Executa os comandos de forma sequencial, mesmo que o primeiro der errado 
+
+	&& 	# Executa o próximo comando só se o primeiro der certo
+	||	# Executa o segundo comando só se o primeiro der errado 
+
+# Retorna um diretório e depois  lista o conteúdo do diretório
+
+	cd .. ; ls -l 				  
+
+# Não retorna diretório e lista o conteúdo deste diretório OBS. Desta forma é aberto um sub shell para rodar o comando.
+
+	( cd.. ; ls -l ) 			 
+
+# Redirecionamento de entrada e saída 
+
+
+# Ele CRIA um novo arquivo com o conteúdo direcionado pelo primeiro comando 
+
+	cat alunos.txt > alunos-temp.txt 	 
+
+# Concatena no final do arquivo
+
+	cat alunos.txt >> alunos-tempo.txt	 
+
+# Jogando o erro para o arquivo log.out
+
+	cat alunos.txt2 2> log.out		
+	
+# Concatenando a saída do erro no final do arquivo log.out
+
+	cat alunos.txt2 2>> log.out	
+
+# Joga tanto saída padrão como a saída de erro no arquivo log.out
+
+	cat alunos.txt > log.out 2>&1 		 
+
+	cat alunos.txt3 > log.out 2>&1 
+
+# Redirecionamento de entrada 
+
+	tr 'a' 'Z' < alunos.txt 
+
+--> Instruções condicionais 
+
+TEST  - Utilizado para testar se é verdadeiro 0 ou falso 1 uma determinada ação ou comando
+
+O retorno de um comando só pode ser verdadeiro ou falso, para cada uma das situações o shell interpreta a saída com o código 0 para sucesso ou 1 para insucesso. 
+
+Ex. 
+
+test 10 -gt 5 # Verdadeiro então o retorno do comando será 0
+test 5 = 4 	  # False então o retorno do comando será 1 
+
+Algumas flags do comando test 
+
+-gt Maior que 
+-lt Menor que 
+-ge Maior igual 
+-le Menor igual 
+-eq Igual 
+-z Testa se a variável é vazia, caso positivo ele retorna 0 verdadeiro
+-n Testa com ajuda das "" duplas se a variável é vazia, caso seja ela retorna o 1 falso, todas as outras formas retornará sempre 0 verdadeiro 
+! Inverte o comando a seguir
+
+IF - Ele segue uma condição caso seja isso ele executa os comandos, caso seja aquilo ele executa os outros comandos 
+
+if variavel in 
+then 
+	comando 1 
+	comando 2 
+else 
+	comando 1 
+fi
+
+Ex. 
+
+VAR=
+
+if $VAR in 
+then 
+	echo "Sucesso"
+else 
+	echo "Insucesso"
+fi
+
+if "$VAR" in 
+then 
+	echo "Insucesso"
+else 
+	echo "Sucesso"
+fi 
+
+CASE - Aguarda informações passadas pelo o usuário para que possa executar os comandos listados 
+
+
+case $VAR in 
+	Opção 1) 
+		comando 1 
+		;;
+	Opção 2 )
+		;;
+	* )
+	;;
+esac 
+
+Ex. 
+
+read -p "Digite uma opção"
+
+case $1 in 
+			[1][0-9] )
+					echo "O Parâmetro digitado é um número: $1"
+					;;
+			[a-z] ) 
+					echo "O parâmetro digitado é uma letra minuscula: $1"
+					;;
+			[A-Z] ) echo "O parâmetro digitado é uma letra maíscula: $1"
+					;; 
+			*	  ) echo "Opção inválida"
+						exit 1 
+					;;
+esac 
+			
+--> Seção 4 Instruções de Loop
+ 
+FOR - Ele testar uma condição e toma decisão baseado nesses testes 
+
+for VAR in 1 2 3 4 5  
+do 
+	echo "O parâmetro é: $VAR"
+done 
+
+FOR+IFS - A varíavel IFS ou separador de campo (Internal Field Seprator) é onde o shell interpreta onde existe uma espaço" " , uma tabulação \t e uma quebra de linha \n 
+
+
+
+set | grep IFS 
+IFS=$' \t\n'
+
+Havendo a necessidade alterar esse padrão reconhecido pelo shell é recomendado realizar o backup da variável, pois outros programas utilizam desse padrão para o seu funcionamento. 
+
+OLDIFS=$IFS 
+
+set | grep IFS 
+IFS=$' \t\n'
+OLDIFS=$' \t\n' 
+
+Ex. Após alteração do valor padrão da variável IFS (Internal Field Separator) para IFS=: ao rodar o comando abaixo, toda vez que ele encontrar o separador : ele vai realizar um loop 
+ 
+Obs: A alteração da variável IFS só vale para a sessão atual, pois ela é carregada todas vez que loga-se no shell, ou seja se abrir em uma outra sessão será utilizado a variável padrão IFS='$ \t\n'
+
+for var in $(tail -n5 /etc/passwd)
+do 
+	echo "O valor exibido é: $var"
+done 
+
+WHILE - Enquanto for verdadeiro faça isso 
+
+while comando|condição  
+do 
+	comando 1 
+done 
+
+Ex. 
+
+X=20
+
+while [ $X -le 30]
+do 
+	echo "O valor é: $X"
+	X=(expr $X + 1)
+done 
+
+
+while [ $(ps aux| wc -l) -le 72]
+do
+	echo "Sistema OK!!"
+done 
+
+#!/bin/bash 
+
+read -p "Digite o valor máximo de processo: " MAXIMO 
+
+while [ ps aux | wc -l) -le $MAXIMO]
+do
+	echo "Sistema OK!!!"
+	echo "O valor máximo de processos é: " $(ps aux|wc -l)
+	echo 
+done 
+
+echo "Valor máximo de processos excedidos"
+echo "O sistema precisa ser verificado"
+
+
+ 
+UNTIL - Até quando for verdadeiro faça isso ou seja enquanto for falso ele continua executando o loop 
+
+
+
+until comando|condição  
+do 
+	comando 1 
+done 
+
+break e continue 
+
+Break - Ele só pode ser usado em instruções de loop e força a saída do loop indo até o done 
+Continue - Ele só pode ser usado em instruções de loop e força que o loop volte ao início 
+
+--> Seção 5 Funções 
+--> Seção 6 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

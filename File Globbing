@@ -1,0 +1,56 @@
+# File Globbing 
+
+
+File Globbing voltado para seleção de arquivos 
+REGEX voltado para edição de text 
+
+
+Exemplo de fil globbing 
+
+
+# Lista todos os arquivos com o nome aula e que tenha qualquer caracter após o a. 
+
+
+	ls -l aula* 
+
+# Lista todo os arquivos Aula1 que tenha os caracter 1 e 2 no final após o número 1. 
+
+	ls -l Aula1[12]
+	ls -l Aula1[1-5]
+
+
+# Lista todos os arquivos que terminem com A maiusculo ou minusculo e que tenha o caracter 1 ou 2 no final 
+
+	ls -l Aul[Aa][12]
+
+Lista todos os arquivos que termine com 1 ou 2
+
+	ls -l *[12]
+
+# Lista os arquivos com nome Aula e AULA que termine com 11 
+
+	ls -l {Aula,AULA}11
+
+# Lista os arquivos com o nome Aula1 que tenha mais um caracter após o número 1 
+
+	ls -l Aula1?
+
+
+# Expressões regulares 
+
+
+	egrep "linux" texto.txt
+	egrep "b[aei]g" texto.txt
+	egrep "^Linux" texto.txt
+	egrep "Linux$" texto.txt 
+	egrep "^#" texto.txt
+	egrep -v "^#" texto.txt
+	egrep "^$" texto.txt 
+
+	alias egrep='egrep --color'
+
+	egrep "b[a-i]g*" texto.txt 
+
+
+
+

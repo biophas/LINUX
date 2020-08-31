@@ -1,0 +1,22 @@
+# O uso de aspas no shell 
+
+
+# Protegendo o * 
+
+	echo * é diferente de echo "*" 
+	echo '*'
+	echo \* 
+
+# Caracter que as aspas dupla não protge 
+
+	$ ` / 
+
+Obs. A as aspas simples ou apostofro protegem todo os caracters 
+
+Exemplo 
+
+	echo "$TESTE"
+	echo '$TESTE'   
+
+
+

@@ -1,0 +1,14 @@
+Recebendo entradas através de parâmetros 
+
+Script: ExemploParametros.sh 
+
+Exemplo de Parâmetro
+
+man tar 
+
+man: comando 
+tar: parâmetros
+
+
+
+

@@ -1,0 +1,35 @@
+# VARIÁVEL NO SHELL
+
+	env (Apenas variáveis exportadas)
+
+	set (Variáveis locais e exportadas)
+ 
+# Referenciando uma variável 
+
+	echo $VARIAVEL  
+
+# Declarando uma variável 
+
+	VARIAVEL=Valor 
+
+# Declarando uma variável com espaço
+
+	CURSO="Curso Sell Script"
+
+# Exportando uma variável 
+
+	TESTE=Curso && export TESTE 
+
+Obs. Ao utilizar o comando export, a variável TESTE terminará sendo reconhecida por qualquer processo filho aberto pelo o bash atual. 
+
+
+# Inserindo um comando dentro de uma variável
+
+	HORA=`date +%H`
+	MINUTO=$(date +%M)
+
+
+
+
+
+
