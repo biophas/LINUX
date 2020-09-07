@@ -147,7 +147,12 @@ echo -e Curso\tShell\nScript # Habilita funções específicas como tabulação 
 
 # SLEEP 
 
-	spleep		# Aguarda um determinado tempo para exibir ou proseguir um comando. 
+	spleep		# Aguarda um determinado tempo para exibir ou proseguir um comando.
+
+Exemplo de uso do Sleep em um script
+
+TIME=5 
+sleep $TIME 
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -268,7 +273,6 @@ fgrep - Não usa expressões regulares, somente string
 
 --------------------------------------------------------------------------------------------------------------------
 
-
 # SED 
 
 # Deleta da linha 01 a linha 03
@@ -368,13 +372,6 @@ Obs. Para que as mudanças sejam feitas em todas as ocorrências encontradas, é
 
 	find . -user root -type d -exec chown fulano '{}'\;
 
-
-
-
-
-
-
-
 --------------------------------------------------------------------------------------------------------------------
 
 # DATE 
@@ -448,6 +445,8 @@ Obs. Para que as mudanças sejam feitas em todas as ocorrências encontradas, é
 # Redirecionamento de entrada 
 
 	tr 'a' 'Z' < alunos.txt 
+
+################################################################################################################################
 
 --> Instruções condicionais 
 
@@ -529,7 +528,10 @@ case $1 in
 						exit 1 
 					;;
 esac 
-			
+
+
+
+################################################################################################################################			
 --> Seção 4 Instruções de Loop
  
 FOR - Ele testar uma condição e toma decisão baseado nesses testes 
@@ -563,7 +565,7 @@ do
 	echo "O valor exibido é: $var"
 done 
 
-WHILE - Enquanto for verdadeiro faça isso 
+--> WHILE - Enquanto for verdadeiro faça isso 
 
 while comando|condição  
 do 
@@ -600,11 +602,8 @@ done
 echo "Valor máximo de processos excedidos"
 echo "O sistema precisa ser verificado"
 
-
- 
-UNTIL - Até quando for verdadeiro faça isso ou seja enquanto for falso ele continua executando o loop 
-
-
+--------------------------------------------------------------------------------------------------------------------------------
+--> UNTIL - Até quando for verdadeiro faça isso ou seja enquanto for falso ele continua executando o loop 
 
 until comando|condição  
 do 
@@ -616,6 +615,7 @@ break e continue
 Break - Ele só pode ser usado em instruções de loop e força a saída do loop indo até o done 
 Continue - Ele só pode ser usado em instruções de loop e força que o loop volte ao início 
 
+---------------------------------------------------------------------------------------------------------------------------------
 --> Seção 5 Funções 
 --> Seção 6 
 
