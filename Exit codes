@@ -1,18 +1,23 @@
---> Exit codes 
+--> Saiba como funciona os Exit codes no Linux  
 
-0 é sucesso 
+	Ao retornar 0 é porque o comando foi concluído com sucesso 
+	Qualquer valor maior que zero representa um tipo de erro (Exit Code) 
+	O Código de retorno pode ser personalizado pelo o programador
+	$? - O código de retorno do comando anterior 
 
-Qualquer valor maior que zero representa um tipo de erro (Exit Code) 
- 
+# Abaixo um exemplo da criação do arquivo chamado teste, O arquivo teste foi criado, ou seja o comando foi executado com sucesso.  
 
-$? - O código de retorno do comando anterior 
+	touch teste 
+	echo $? 
+	0
 
-touch teste 
-echo $? 
-0 
+# Abaixo um exemplo de cat no arquivo teste1, supondo que o arquivo teste1 não exista no diretório atual o retorno será 1, ou seja insucesso. 
 
-# Verificando código de erro dos comandos é pelo man ls 
+	cat teste1 
+	echo $? 
+	1  
 
+# Alguns comando pode ter suas saídas diferente do que o habitual, segue o tratamento de código do comando ls retirado do man. 
 
  Exit status:
        0      if OK,
@@ -21,6 +26,12 @@ echo $?
 
        2      if serious trouble (e.g., cannot access command-line argument).
 
-Obs. o Código de retorno pode ser personalizado pelo o programador
 
+Obrigado pelo seu acompanhamento!
+
+Fábio Costa 
+Analista de Infraestrutura Linux 
+biophas@gmail.com 
+
+Atualizado em 06/09/2020
 
