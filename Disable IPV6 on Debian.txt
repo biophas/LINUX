@@ -1,3 +1,6 @@
+Problemas update no Debian 
+
+Os passos abaixo é utilizado para resolver problemas na hora de realizar um update, ou seja atualizando os indices do arquivo /etc/apt/sources.list
 
 
 # Edit file /etc/sysctl.conf 
