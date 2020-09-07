@@ -1,0 +1,12 @@
+# Instalação interface Grafica no Debian 
+
+
+echo 'deb http://deb.debian.org/debian/ stretch-updates main' >> /etc/apt/sources.list && apt-get update && apt-get install gnome-core gnome gnome-shell gnome-tweak-tool gdm3 -y && shutdown -r 
+
+Obs. gnome-desktop-environment, pacote não foi encontrado. 
+
+Validado em 06/09/2020 no Debian 9 (stretch)
+
+Fábio da Silva Costa
+SysAdmin
+ID LPI000333828
