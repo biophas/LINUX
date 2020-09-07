@@ -1,6 +1,6 @@
---> Saiba como funciona os Exit codes no Linux  
+--> Saiba como funciona os Exit code no Linux  
 
-	Ao retornar 0 é porque o comando foi concluído com sucesso 
+	Ao retornar 0 é porque o comando ou ação foi concluído com sucesso 
 	Qualquer valor maior que zero representa um tipo de erro (Exit Code) 
 	O Código de retorno pode ser personalizado pelo o programador
 	$? - O código de retorno do comando anterior 
