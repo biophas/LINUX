@@ -617,7 +617,95 @@ Continue - Ele só pode ser usado em instruções de loop e força que o loop vo
 
 ---------------------------------------------------------------------------------------------------------------------------------
 --> Seção 5 Funções 
+
+
 --> Seção 6 
+
+
+	# CRIANDO LOGS E ENVIANDO EMAILS 
+
+Maneiras de captura de logs 
+
+
+# Enviando a saída padrão para o arquivo log-out.txt 
+
+	>> log-out.txt 
+
+# Enviando a saída de erro para o arquivo log-out
+
+	2>> log-out.txt 
+
+# Enviando a saída padrão e referenciando a saída de erro para o mesmo local da saída padrão 
+
+	cat /etc/passwd 1>> log.out 2>&1 
+
+# Formas de informar a criação de log num script
+
+	$LOG="/DIR/LOG.TXT"
+
+	sort arquivo.txt >> /dir/log.txt 
+	sort arquivo.txt >> $LOG
+
+# Alimenta o arquivo de log e mostra a saída na tela 
+
+	sort arquivo.txt | tee -a "$LOG" 
+
+# Alimenta a variável "$LOG" 
+
+	sort arquivo.txt >> "$LOG" 
+
+# Ao utilizar o exec em um script toda a informação do script é enviado para o arquivo de log 
+
+	exec 1>> "$LOG" 
+	exec 2>&1 # Referência que a saída de erro deve ser salvo no mesmo local da saída padrão 
+
+# Utilizando o exec + tee para alimentar o arquivo de log e exibir a informação em tela 
+
+	exec 1>> >(tee -a "$LOG")
+	exec 2>&1 
+
+# Criando logger e rsyslog 
+
+# Arquivos que são lidos pelo rsyslog 
+
+
+# O arquivo rsyslog é composto da seguinte maneira 
+
+Facility
+Priority 
+
+# Disponibilizado o range de local0 a local7 para customização pelo o administrador do sistema 
+
+local0 a local7 
+
+/etc/rsyslog.d/*
+
+# Configuração do arquivo .conf dentro do diretório /etc/rsyslog.d 
+
+	vim /etc/rsyslog.d/meuarquivo.conf 
+
+	local0	/var/log/meuarquivo.log 
+
+# Para gravação de log no arquivo é utilizado o comando logger 
+
+	logger -p local0.warn -t [$(basename $0)]
+	
+# Utilizando o comando logger junto com o comando tee 
+
+
+sort $ARQ | tee -a >(logger -p local0 -t [$(basename [$0])
+
+
+
+
+
+
+
+ 
+
+
+
+
 
 
 
