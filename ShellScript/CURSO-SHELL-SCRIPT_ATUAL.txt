@@ -696,12 +696,42 @@ local0 a local7
 sort $ARQ | tee -a >(logger -p local0 -t [$(basename [$0])
 
 
+# Envio de e-mail pelo Shell Script 
+
+Pacote: bsd-mailx # Não é possivel configurar email externo 
+Comandos: mail 
+
+Pacote: mutt # É possível configurar e-mail externo 
+Pacote: Sendemail # É possível configurar e-mail externo
+
+
+A diferença de sendmail e sendeamil 
+
+
+sendemail - lightweight, command line SMTP email client
+sendmail  - powerful, efficient, and scalable Mail Transport Agent (metapackage)
 
 
 
+# Enviando e-mail no linux 
 
+mail -s "Assunto" ricardo@gmail.com < log.out 
 
+mail > Comando 
+-s > Subject ou Assunto 
+ricardo > Destinatário 
+log.out > arquivo que alimentara o assunto do e-mail 
+
+# Para ler
+
+mail 
+1 para ler 
+
+# Existem duas formas de enviar um e-mail 
  
+
+mail -s "Assunto" <endereço@mail> < log.out 
+echo "Email teste" | mail -s "Assunto" <endereço@mail>
 
 
 
