@@ -1,1 +1,69 @@
 SEÇÃO 6 - FUNÇÕES 
+
+
+Crie um script que receba uma opção e uma data, as opções serão as
+seguintes:
+
+
+• -f <DATA>: Retorna 0 para data no formato BR (DD/MM/YYYY ou
+DDMMYYYY)
+
+Análise: Data formato brasileiro retorno 0, as opções pode ser com o seu barras 
+
+Dia/Mês/Ano 
+DiaMêsAno 
+
+1 para formato US (MM/DD/YYYY ou MMDDYYYY)
+
+Análise: Data no formato Americano, ou seja Mês/Dia/Ano 
+
+Mês/Dia/Ano 
+MêsDiaAno 
+
+2 quando não é possível determinar (Exemplo 12/12/1990) 
+
+Quando o sistema não consegue saber o que é dia e o que é mês na data informada 
+
+01/01/2020
+
+3 quando o dia e mês são inválidos (Exemplo 30/30/1990)
+
+Quando o dia e mês não existem
+
+22/22/1982 
+
+-i <DATA>: Inverte a data de formato BR para US ou de US para BR.
+Sempre inclui barras.
+
+-b <DATA>: Inclui as barras de data. Validar se o formato é válido 
+
+ -e <DATA>: Exibe a data em formato extenso. Exemplo de 13081918
+para 13 de Agosto de 1981"
+
+--help: Exibir o help do comando
+Cada opção deve ser implementada através de uma função.
+
+
+Opções:
+-f = Retorna 0 para BR, 1 para US e 2 quando impossível determinar, 3 Inválido
+-i = Inverte formato BR para US e US para BR. Inclui as Barras
+-b = Inclui Barras de Data. Exemplo: de 13081981 para 13/08/1981
+-e = Exibe a data em formato extenso. Exemplo de 13081918 para 13 de
+Agosto de 1981
+
+FuncoesDiversas.sh
+
+$ ./FuncoesDiversas.sh -f 08131981
+1
+
+$ ./FuncoesDiversas.sh -i 08131981
+13/08/1981
+
+$ ./FuncoesDiversas.sh -b 08131981
+08/13/1981
+
+$ ./FuncoesDiversas.sh -e 08131981
+13 de Agosto de 1981
+
+
+

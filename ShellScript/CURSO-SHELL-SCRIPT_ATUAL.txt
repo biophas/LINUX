@@ -698,25 +698,26 @@ sort $ARQ | tee -a >(logger -p local0 -t [$(basename [$0])
 
 # Envio de e-mail pelo Shell Script 
 
-Pacote: bsd-mailx # Não é possivel configurar email externo 
-Comandos: mail 
+	Pacote: bsd-mailx # Não é possivel configurar email externo 
+	Comandos: mail 
 
-Pacote: mutt # É possível configurar e-mail externo 
-Pacote: Sendemail # É possível configurar e-mail externo
-
-
-A diferença de sendmail e sendeamil 
+	Pacote: mutt # É possível configurar e-mail externo 
+	Pacote: Sendemail # É possível configurar e-mail externo
 
 
-sendemail - lightweight, command line SMTP email client
-sendmail  - powerful, efficient, and scalable Mail Transport Agent (metapackage)
+A diferença de sendmail e sendemail 
+
+
+	sendemail - lightweight, command line SMTP email client
+	sendmail  - powerful, efficient, and scalable Mail Transport Agent (metapackage)
 
 
 
 # Enviando e-mail no linux 
 
-mail -s "Assunto" ricardo@gmail.com < log.out 
-
+	mail -s "Assunto" ricardo@gmail.com < log.out 
+	echo "Curso Shell Script" mail -s "testando mail" ricardo 
+	
 mail > Comando 
 -s > Subject ou Assunto 
 ricardo > Destinatário 
@@ -732,6 +733,28 @@ mail
 
 mail -s "Assunto" <endereço@mail> < log.out 
 echo "Email teste" | mail -s "Assunto" <endereço@mail>
+
+# Técnias de debug - bash e set 
+
+
+# Testar a syntax sem executar o script 
+
+	bash -n 
+
+# 
+
+	bash -x 
+
+# Utilizando o set dentro do código 
+
+	set -xv # Inicia o debug 
+	set +xv # Finaliza o debug 
+	
+# Comando trap, execução passo a passo 
+
+	set -xv 
+	trap read DEBUG # Inicia a execução passo a passo   
+	trap "" DEBUG # Finaliza execução passo a passo 
 
 
 
