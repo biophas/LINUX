@@ -19,29 +19,23 @@ Desativa: Floppy
 4 GB swap 
 4.7 /var 
 
-# Instalação de programas 
+# Instalação de programas e ferramentas de compilação do Debian  
 
-gcc
-g++
-libncurses 
-build-essential
-make 
-vim
-openssh-server
-net-tools 
-perl
-dnsutils
-nmap
+  apt install -y gcc g++ libncurses build-essential make vim openssh-server net-tools perl dnsutils nmap && apt-get update && apt-get upgrade
 
-# Configuração do arquivo vimrc 
+# Custommizando o editor de texto vim 
 
-Descomentar a linha syntax on (Habilita a syntax)
-Adicionar a linha set number (Permite numreas as linhas de arquivo aberto)
+  vim /etc/vimrc/vim.conf 
 
-apt-get update && apt-get upgrade 
+Descomentar a linha syntax on (Habilita a syntax customizada)
 
-apt-get install gcc g++ libcurses build-essential libgd2-dev make vim openssh-server net-tools perl dnsutils nmap -y 
+Adicionar a linha set number (Permite numerar as linhas ao utilizar o vim)
 
+
+
+   
+
+  
 
 
 
