@@ -1,18 +1,18 @@
 # Preparando uma máquina template Linux Debian para estudo 
 
-# Download da debian-9.5.0-amd64-netinst.iso 
+# Download da imagem debian-9.5.0-amd64-netinst.iso 
 
 https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/
 
-# Configuração do Hardware 
+# Configuração do Hardware no virtualbox  
 
 HD: 20GB
 Mem:1024 MB
 CPU: 02
-Network Adapter: Bridge 
+Network Adapter: Adapter Modo Bridge (Opcional)
 Desativa: Floppy
 
-# Configuração partição 
+# Configuração partição sugerida para uma máquina virtual que será utilizada para estudos
 
 300 MB /boot
 12Gb / 
