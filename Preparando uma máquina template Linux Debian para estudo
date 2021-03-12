@@ -21,7 +21,7 @@ Desativa: Floppy
 
 # Instalação de programas e ferramentas de compilação do Debian  
 
-  apt install -y gcc g++ libncurses build-essential make vim openssh-server net-tools perl dnsutils nmap && apt-get update && apt-get upgrade
+  apt install -y gcc g++ build-essential make vim openssh-server net-tools perl dnsutils nmap && apt-get update && apt-get upgrade
 
 # Custommizando o editor de texto vim 
 
