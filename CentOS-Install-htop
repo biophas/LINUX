@@ -1,0 +1,11 @@
+# Install htop on CentOS 8 
+
+
+yum -y install epel-release
+yum repolist
+yum search htop
+yum info htop
+yum update
+yum upgrade
+yum install htop
+
