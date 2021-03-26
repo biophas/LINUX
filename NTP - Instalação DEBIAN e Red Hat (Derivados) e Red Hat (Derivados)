@@ -1,0 +1,91 @@
+--> Instalação do servidor de hora NTP no Debian 
+
+--> Atualizando os indices do respositório (opcional)
+
+# apt-get update
+
+--> Atualizando os pacotes caso exista (opcional)
+
+# apt-get upgrade
+
+--> Verificando a disponibilidade do pacote no respositório 
+
+# apt-cache search "^ntp"
+
+--> Instalando o pacote 
+
+# apt-get install ntp 
+
+--> Configurando o arquivo de configuração 
+
+# vim /etc/ntp/ntp.conf 
+
+--> Criando o arquivo ntp.drift 
+
+# touch /var/lib/ntp/ntp.drift 
+
+--> Mas o que é o arquivo ntp.drift? 
+
+  --> O ntp.drift registra a instabilidade na frequência do relógio do seu computador e o Servidor
+  remoto NTP e utiliza este registro para sincronizar corretamente o relógio do seu equipamento
+  com o do servidor de referência (Servidor remoto) fonte: https://blog.bidela.com.br/servicos/ntp-e-suas-configuracoes/
+  
+--> Configurando o arquivo de /etc/ntp.conf
+
+# vim /etc/ntp.conf 
+
+--> Descomente a linha driftfile /var/lib/ntp/ntp.drift, caso não exita, inserir essas inforamações
+
+--> Descomente a linha statsdir /var/log/ntpstats/
+
+--> Normalmente deixo as linhas abaixo comentadas 
+
+# pool 0.debian.pool.ntp.org ibrust
+# pool 1.debian.pool.ntp.org ibrust
+# pool 2.debian.pool.ntp.org ibrust
+# pool 3.debian.pool.ntp.org ibrust
+
+--> Inserir o servidor que deseja utilizar 
+
+server a.ntp.br prefer iburst dynamic 
+server b.ntp.br prefer iburst dynamic 
+server c.ntp.br prefer iburst dynamic 
+
+--> Inseria as configurações abaixo fonte: https://blog.bidela.com.br/servicos/ntp-e-suas-configuracoes/
+
+statsdir /var/log/ntpstats/
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+server a.ntp.br prefer iburst dynamic
+server ntp.ansp.br iburst dynamic
+server ntp.cais.rnp.br iburst dynamic
+server b.ntp.br iburst dynamic
+server c.ntp.br iburst dynamic
+restrict a.ntp.br mask 255.255.255.255 nomodoify noquery
+restrict ntp.ansp.br mask 255.255.255.255 nomodoify noquery
+restrict ntp.cais.rnp.br mask 255.255.255.255 nomodify noquery
+restrict b.ntp.br iburst mask 255.255.255.255 nomodify noquery
+restrict c.ntp.br iburst mask 255.255.255.255 nomodify noquery
+restrict -4 default kod notrap nomodify nopeer noquery
+restrict -6 default kod notrap nomodify nopeer noquery
+restrict 127.0.0.1
+restrict ::1
+restrict 192.168.0.0 mask 255.255.255.0
+
+--> Inicie o ftp 
+
+# systemctl start ntp 
+
+# systemctl status ntp 
+
+--> Pronto! Seu NTP já está funcionando e atualizando seu relógio de acordo com a Hora Legal Brasileira. 
+
+Qualquer dúvida: biophas@gmail.com 
+
+
+# Instalando servidor ntp no CentOS (Em construção...)
+
+
+
