@@ -51,7 +51,8 @@ server a.ntp.br prefer iburst dynamic
 server b.ntp.br prefer iburst dynamic 
 server c.ntp.br prefer iburst dynamic 
 
---> Inseria as configurações abaixo fonte: https://blog.bidela.com.br/servicos/ntp-e-suas-configuracoes/
+--> Inserida as configurações abaixo 
+fonte: https://blog.bidela.com.br/servicos/ntp-e-suas-configuracoes/
 
 statsdir /var/log/ntpstats/
 statistics loopstats peerstats clockstats
@@ -74,7 +75,7 @@ restrict 127.0.0.1
 restrict ::1
 restrict 192.168.0.0 mask 255.255.255.0
 
---> Inicie o ftp 
+--> Inicie o ntp 
 
 # systemctl start ntp 
 
@@ -83,7 +84,6 @@ restrict 192.168.0.0 mask 255.255.255.0
 --> Pronto! Seu NTP já está funcionando e atualizando seu relógio de acordo com a Hora Legal Brasileira. 
 
 Qualquer dúvida: biophas@gmail.com 
-
 
 # Instalando servidor ntp no CentOS (Em construção...)
 
