@@ -1,12 +1,8 @@
 --> Instalação do servidor de hora NTP no Debian 
 
---> Atualizando os indices do respositório (opcional)
+--> Atualizando o Debian
 
-# apt-get update
-
---> Atualizando os pacotes caso exista (opcional)
-
-# apt-get upgrade
+# apt update && apt upgrade
 
 --> Verificando a disponibilidade do pacote no respositório 
 
@@ -14,11 +10,7 @@
 
 --> Instalando o pacote 
 
-# apt-get install ntp 
-
---> Configurando o arquivo de configuração 
-
-# vim /etc/ntp/ntp.conf 
+# apt-get install ntp -y
 
 --> Criando o arquivo ntp.drift 
 
@@ -65,8 +57,6 @@ server ntp.cais.rnp.br iburst dynamic
 server b.ntp.br iburst dynamic
 server c.ntp.br iburst dynamic
 restrict a.ntp.br mask 255.255.255.255 nomodoify noquery
-restrict ntp.ansp.br mask 255.255.255.255 nomodoify noquery
-restrict ntp.cais.rnp.br mask 255.255.255.255 nomodify noquery
 restrict b.ntp.br iburst mask 255.255.255.255 nomodify noquery
 restrict c.ntp.br iburst mask 255.255.255.255 nomodify noquery
 restrict -4 default kod notrap nomodify nopeer noquery
@@ -86,6 +76,8 @@ restrict 192.168.0.0 mask 255.255.255.0
 Qualquer dúvida: biophas@gmail.com 
 
 # Instalando servidor ntp no CentOS (Em construção...)
+
+Atualizado em 16/07/2021
 
 
 
