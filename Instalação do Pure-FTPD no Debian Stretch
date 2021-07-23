@@ -30,7 +30,7 @@ INSTALAÇÃO DO PURE-FTPD NO DEBIAN 9 - STRETCH
 
 # Adicionando usuário e grupo no Pure-FTPD
 
-  pure-pw useradd ftpuser -u uid -g gid -c "Usuário FTP" -d /home/ftpuser 
+  pure-pw useradd ftpuser -u <uid> -g <gid> -c "Usuário FTP" -d /home/ftpuser 
 
 # Atualizando o pureftpd.pdb 
 
